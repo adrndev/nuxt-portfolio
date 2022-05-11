@@ -2,13 +2,12 @@
   <div class="wrap">
     <Header />
     <main class="Main">
-      <div class="bg first">
-        <!-- <img src="@/assets/images/background-1.png" alt="Crossing the street by Andrea Cau"> -->
+      <div class="hero">
         <MyParticles />
-        <div class="web-title">
+        <div class="web-title absolute top-1/2 left-4 right-4 w-full lg:w-auto transform -translate-y-1/2 text-center lg:text-left">
           <h1 class=" animate__fadeInRight animate__delay-1s">Hi! I'm Adrian</h1>
-          <div class="badge">Fullstack developer</div>
-          <p class=" animate__fadeInUp animate__delay-2s">This is my portfolio. Check out my stack and projects. Contact my anytime.</p>
+          <div class="badge py-1.5 px-3 text-lg mb-4 inline-block text-dark-gray bg-yellow-main">Fullstack developer</div>
+          <p class=" animate__fadeInUp animate__delay-2s mx-auto lg:mx-0 mb-4">This is my portfolio. Check out my stack and projects. Contact me anytime.</p>
           <button class="contact-button">Contact me</button>
         </div>
       </div>
@@ -20,9 +19,14 @@
           icon="fa-solid fa-chevron-down" />
       </div>
 
-      <section id="about" class="section">
-        <p>something about me</p>
-        <img src="https://picsum.photos/200/300" alt="">
+      <section id="about" class="section about flex justify-center gap-x-12 items-center">
+        <div class="about__content flex-1">
+          <h2 class="content__name text-6xl mb-2 pb-2 text-dark-gray">Adrian Jaskot</h2>
+          <p class="content__desc text-xl max-w-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique suscipit vestibulum. Aenean eu justo id lorem tincidunt fermentum. Pellentesque pretium, urna non ullamcorper hendrerit, turpis tortor varius dui, sit amet euismod ante enim non mauris. Cras tempor ipsum eget nunc sollicitudin, non feugiat justo consectetur.</p>
+        </div>
+        <div class="about__photo w-80 text-right">
+          <img class="rounded-full w-80 h-80 inline-block" src="https://picsum.photos/200/300" alt="Jaskot Adrian">
+        </div>
       </section>
 
       <section id="stack" class="section text-center">
@@ -54,24 +58,19 @@ export default {
 @import 'assets/scss/_variables.scss';
 
 .Main {
-  min-height: 13000px;
-
-  .bg {
-    overflow: hidden;
-    position: relative;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+  .hero {
+    height: 95vh;
+    background: $bgColor;
     .web-title {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 6rem;
       color: $gray;
-      padding: 2rem;
+
+      @screen lg {
+        @apply left-32;
+      }
+
+      @screen 2xl {
+        @apply left-72;
+      }
 
       h1 {
         font-size: 5rem;
@@ -79,13 +78,7 @@ export default {
       }
 
       .badge {
-        color: $bgColor;
-        background: $mainColor;
-        display: inline-block;
-        padding: 6px 12px;
-        margin-bottom: 1rem;
         font-family: 'Inconsolata';
-        font-size: large;
       }
 
       p {
@@ -93,7 +86,6 @@ export default {
         font-family: 'Poppins', sans-serif;
         color: #a1a79f;
         max-width: 50vw;
-        margin-bottom: 1rem;
       }
 
       .contact-button {
@@ -108,11 +100,6 @@ export default {
           color: $bgColor;
         }
       }
-    }
-
-    &.first {
-      height: 95vh;
-      background: $bgColor;
     }
   }
 
@@ -140,8 +127,15 @@ export default {
 
   .section {
     position: relative;
-    padding: 0 8rem;
     padding-bottom: 5rem;
+    @apply px-4;
+    @screen lg {
+      @apply px-32;
+    }
+
+    @screen 2xl {
+      @apply px-72;
+    }
 
     &.dark {
       background: $bgColor;
@@ -163,6 +157,20 @@ export default {
         background: $mainColor;
         height: 5px;
         flex: 1;
+      }
+    }
+
+    &.about {
+      .about__content {
+        .content__name {
+          text-shadow: 8px 8px $mainColor;
+          font-family: 'Jost', cursive;
+        }
+
+        .content__desc {
+          font-family: 'Roboto';
+          color: #6c6c6c;
+        }
       }
     }
   }

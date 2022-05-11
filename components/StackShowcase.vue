@@ -1,7 +1,7 @@
 <template>
   <div class="stack-showcase">
-    <div class="bubbles">
-      <div class="bubble" v-for="lang in stack" :key="lang.title" :title="lang.title">
+    <div class="bubbles grid gap-4 grid-cols-8 lg:grid-cols-6 xl:grid-cols-8">
+      <div class="bubble w-24 h-24 p-4 m-auto" v-for="lang in stack" :key="lang.title" :title="lang.title">
         <img :src="require('devicon/icons/' + lang.path)" :alt="lang.title + ' icon'">
       </div>
     </div>
@@ -108,18 +108,18 @@ export default {
   z-index: 2;
   position: relative;
   .bubbles {
-    display: grid;
-    grid-template-columns: repeat(6, 128px);
-    gap: 2rem 5%;
+    // display: grid;
+    // grid-template-columns: repeat(6, 128px);
+    // gap: 2rem 5%;
     justify-content: center;
 
     .bubble {
-      width: 128px;
-      height: 128px;
+      // width: 128px;
+      // height: 128px;
       overflow: hidden;
       border: solid 8px $bgColor;
       box-shadow: 8px 8px $mainColor;
-      padding: 2rem;
+      // padding: 2rem;
       box-sizing: border-box;
       transition: box-shadow .3s;
       img {
