@@ -14,7 +14,13 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['animate.css/animate.min.css'],
+  css: [
+    'animate.css/animate.min.css'
+  ],
+
+  styleResources: {
+    scss: ['~assets/scss/main.scss']
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -44,7 +50,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

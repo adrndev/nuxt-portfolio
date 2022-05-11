@@ -1,7 +1,7 @@
 <template>
   <Particles
     id="tsparticles"
-    :particlesInit="particlesInit"
+    :particles-init="particlesInit"
     :options="options"
     class="particles-container"
   />
@@ -60,8 +60,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'assets/scss/_variables.scss';
-
 .particles-container {
   animation: fadeIn 3s;
 }

@@ -1,0 +1,68 @@
+$mainColor: #ffe852;
+$bgColor: #071013;
+$gray: #CAD3C8;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.section {
+    position: relative;
+    @apply px-4;
+
+    @screen lg {
+        @apply px-32;
+    }
+
+    @screen 2xl {
+        @apply px-72;
+    }
+
+    &.dark {
+        background: $bgColor;
+    }
+
+    &.about {
+        .about__content {
+            .content__name {
+                text-shadow: 8px 8px $mainColor;
+                font-family: 'Jost', cursive;
+            }
+
+            .content__desc {
+                font-family: 'Roboto';
+                color: #6c6c6c;
+            }
+        }
+    }
+}
+
+.section-title {
+    font-size: 4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-family: "Inconsolata", monospace;
+    text-transform: uppercase;
+    color: $bgColor;
+
+    &::before,
+    &::after {
+        content: '';
+        background: $mainColor;
+        height: 5px;
+        flex: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,12 +1,12 @@
 <template>
   <header class="Header">
-    <div class="header-wrapper px-32">
+    <div class="header-wrapper px-8 md:px-24">
       <div class="logo-wrapper">
         logo
       </div>
-      <nav class="menu">
+      <nav class="menu hidden md:block">
         <ul class="menu-list">
-          <li class="menu-item" v-for="item in menuItems" :key="item.title">
+          <li v-for="item in menuItems" :key="item.title" class="menu-item">
             <a :href="item.anchor" @click="scrollTo">{{ item.title }}</a>
           </li>
         </ul>
@@ -31,10 +31,21 @@ export default {
           anchor: '#stack'
         },
         {
+          title: 'My projects',
+          anchor: '#projects'
+        },
+        {
           title: 'Contact me',
           anchor: '#contact'
         }
       ]
+    }
+  },
+  watch: {
+    scrollTop (newValue, oldValue) {
+      const header = document.querySelector('.Header')
+      console.log(newValue)
+      header.classList.toggle('scrolled', newValue > 120)
     }
   },
   mounted () {
@@ -72,23 +83,11 @@ export default {
         window.scroll({ top: element.offsetTop - window.innerHeight / 2 + element.offsetHeight / 2, behavior: 'smooth' })
       }
     }
-  },
-  watch: {
-    scrollTop (newValue, oldValue) {
-      const header = document.querySelector('.Header')
-      header.classList.toggle('scrolled', newValue > 240)
-    }
   }
 }
 </script>
 
 <style lang="scss">
-@import 'assets/scss/_variables.scss';
-
-html {
-  scroll-behavior:smooth;
-}
-
 .Header {
   color: $gray;
   position: sticky;
@@ -134,29 +133,16 @@ html {
           position: relative;
 
           &.active {
-            // text-decoration: line-through;
             &::before {
               content: '';
               position: absolute;
               left: 0;
               top: 50%;
-              // transform: translateY(-50%);
               height: 2px;
               background: black;
               animation: slideRight .3s forwards;
+              pointer-events: none;
             }
-            // &::before {
-            //   content: '';
-            //   position: absolute;
-            //   width: 4px;
-            //   height: 4px;
-            //   background: #071013;
-            //   border-radius: 50%;
-            //   left: 50%;
-            //   transform: translateX(-50%);
-            //   bottom: -4px;
-            //   animation: fadeIn 1s;
-            // }
           }
         }
       }
