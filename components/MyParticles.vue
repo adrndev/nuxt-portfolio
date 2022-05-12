@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .particles-container {
   animation: fadeIn 3s;
 }

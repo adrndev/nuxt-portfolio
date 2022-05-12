@@ -4,17 +4,17 @@
     <main class="Main">
       <div class="hero h-screen bg-dark-gray">
         <MyParticles />
-        <div class="web-title text-gray-main absolute top-1/2 left-4 right-4 lg:w-auto transform -translate-y-1/2 text-center lg:text-left lg:left-32 2xl:left-72">
-          <h1 class="animate__fadeInUp leading-20 text-7xl">
+        <div class="web-title font-poppins text-gray-main absolute top-1/2 left-4 right-4 lg:w-auto transform -translate-y-1/2 text-center lg:text-left lg:left-32 2xl:left-72">
+          <h1 class="animate__fadeInUp leading-20 text-7xl font-jost">
             Hi! I'm Adrian
           </h1>
-          <div class="badge py-1.5 px-3 text-lg my-4 inline-block text-dark-gray bg-yellow-main">
+          <div class="badge font-inconsolata py-1.5 px-3 text-lg my-4 inline-block text-dark-gray bg-yellow-main">
             Fullstack developer
           </div>
           <p class="animate__fadeInUp mx-auto lg:mx-0 mb-4">
             This is my portfolio. Check out my stack and projects. Contact me anytime.
           </p>
-          <button class="contact-button text-lg">
+          <button class="contact-button text-lg font-inconsolata">
             Contact me
           </button>
         </div>
@@ -28,7 +28,7 @@
         />
       </div>
 
-      <section id="about" class="section about flex justify-center gap-x-12 items-center pb-20 flex-col-reverse md:flex-row bg-white-main">
+      <section id="about" class="section about pt-8 md:pt-0 flex justify-center gap-x-12 items-center pb-20 flex-col-reverse md:flex-row bg-white-main">
         <div class="about__content flex-1">
           <h2 class="content__name text-6xl my-4 md:mt-0 md:mb-4 text-dark-gray text-center md:text-left">
             Adrian Jaskot
@@ -42,12 +42,12 @@
         </div>
       </section>
 
-      <div id="stack" class="showcase-sections pb-20">
+      <div id="stack" class="showcase-sections pb-20 bg-white-main">
         <Showcase />
       </div>
 
-      <section id="projects" class="section projects bg-dark-gray text-gray-main py-80 triangles">
-        my projects
+      <section id="projects" class="section projects bg-dark-gray text-gray-main py-40 overflow-x-hidden">
+        <ProjectsSlider />
       </section>
 
       <section id="contact" class="section contact">
@@ -60,11 +60,32 @@
 <script>
 export default {
   name: 'IndexPage',
+  data () {
+    return {
+      observer: null
+    }
+  },
   methods: {
     scrollToFirstSection () {
       const firstSection = document.querySelector('.section')
       firstSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
+  },
+  mounted () {
+    // const sections = document.querySelectorAll('.section')
+
+    // this.observer = new IntersectionObserver((entries, observer) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       entry.target.classList.add('animate__animated', 'animate__fadeInUp')
+    //       observer.unobserve(entry.target)
+    //     }
+    //   })
+    // }, { rootMargin: '0px 0px -300px 0px' })
+
+    // sections.forEach((el) => {
+    //   this.observer.observe(el)
+    // })
   }
 }
 </script>
@@ -73,17 +94,8 @@ export default {
 .Main {
   .hero {
     .web-title {
-      h1 {
-        font-family: 'Jost', cursive;
-      }
-
-      .badge {
-        font-family: 'Inconsolata';
-      }
-
       p {
         font-size: 2rem;
-        font-family: 'Poppins', sans-serif;
         color: #a1a79f;
         @screen md {
           max-width: 50vw;
@@ -93,7 +105,6 @@ export default {
       .contact-button {
         border: solid 3px $mainColor;
         padding: 16px 64px;
-        font-family: 'Inconsolata';
         transition: box-shadow .3s;
 
         &:hover {
@@ -110,32 +121,6 @@ export default {
     position: absolute;
     z-index: 2;
     clip-path: ellipse(60% 100% at 50% 100%);
-  }
-
-  .triangles {
-    position: relative;
-    &::before {
-      content: '';
-      background: #fff;
-      height: 10vh;
-      width: 100%;
-      position: absolute;
-      z-index: 2;
-      clip-path: polygon(100% 0, 0 0, 100% 100%);
-      left: 0;
-      top: 0;
-    }
-    &::after {
-      content: '';
-      background: #fff;
-      height: 10vh;
-      width: 100%;
-      position: absolute;
-      z-index: 2;
-      clip-path: polygon(100% 100%, 0 0, 0 100%);
-      bottom: 0;
-      left: 0;
-    }
   }
 
   .scroll-down {

@@ -2040,6 +2040,11 @@
   "resolved" "https://registry.npmjs.org/animate.css/-/animate.css-4.1.1.tgz"
   "version" "4.1.1"
 
+"animejs@^3.2.1":
+  "integrity" "sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A=="
+  "resolved" "https://registry.npmjs.org/animejs/-/animejs-3.2.1.tgz"
+  "version" "3.2.1"
+
 "ansi-align@^3.0.0":
   "integrity" "sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w=="
   "resolved" "https://registry.npmjs.org/ansi-align/-/ansi-align-3.0.1.tgz"
@@ -6726,6 +6731,13 @@
   "resolved" "https://registry.npmjs.org/num2fraction/-/num2fraction-1.2.2.tgz"
   "version" "1.2.2"
 
+"nuxt-animejs@^1.2.3":
+  "integrity" "sha512-o2Or2UCiAfxi8inhS8ESTuxQ6iPwdpwylXLra0jON1Fom6Tajy8V7RM0ya3zOUMw5hUCX4KOGU4UijIui1mTdQ=="
+  "resolved" "https://registry.npmjs.org/nuxt-animejs/-/nuxt-animejs-1.2.3.tgz"
+  "version" "1.2.3"
+  dependencies:
+    "animejs" "^3.2.1"
+
 "nuxt@^2.15.8":
   "integrity" "sha512-ceK3qLg/Baj7J8mK9bIxqw9AavrF+LXqwYEreBdY/a4Sj8YV4mIvhqea/6E7VTCNNGvKT2sJ/TTJjtfQ597lTA=="
   "resolved" "https://registry.npmjs.org/nuxt/-/nuxt-2.15.8.tgz"
@@ -9488,6 +9500,11 @@
     "neo-async" "^2.6.2"
     "schema-utils" "^3.0.0"
 
+"throttle-debounce@^2.0.1":
+  "integrity" "sha512-H7oLPV0P7+jgvrk+6mwwwBDmxTaxnu9HMXmloNLXwnNO0ZxZ31Orah2n8lU1eMPvsaowP2CX+USCgyovXfdOFQ=="
+  "resolved" "https://registry.npmjs.org/throttle-debounce/-/throttle-debounce-2.3.0.tgz"
+  "version" "2.3.0"
+
 "through@^2.3.6":
   "integrity" "sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU="
   "resolved" "https://registry.npmjs.org/through/-/through-2.3.8.tgz"
@@ -10215,6 +10232,14 @@
   "resolved" "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
   "version" "1.0.1"
 
+"v-viewer@^1.6.4":
+  "integrity" "sha512-LVkiUHpmsbsZXebeNXnu8krRCi5i2n07FeLFxoIVGhw8lVvTBO0ffpbDC6mLEuacCjrIh09HjIqpciwUtWE8lQ=="
+  "resolved" "https://registry.npmjs.org/v-viewer/-/v-viewer-1.6.4.tgz"
+  "version" "1.6.4"
+  dependencies:
+    "throttle-debounce" "^2.0.1"
+    "viewerjs" "^1.5.0"
+
 "v8-compile-cache@^2.0.3":
   "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
   "resolved" "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
@@ -10237,6 +10262,11 @@
   "integrity" "sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w=="
   "resolved" "https://registry.npmjs.org/vendors/-/vendors-1.0.4.tgz"
   "version" "1.0.4"
+
+"viewerjs@^1.5.0":
+  "integrity" "sha512-QwKrmXlSfKg5x4y74F/jicpHIRqBMMfHXyboOxHDi5n4XAaejjpalphPq4/HW6venQAoMiD57HpVwBk0JvqpSA=="
+  "resolved" "https://registry.npmjs.org/viewerjs/-/viewerjs-1.10.5.tgz"
+  "version" "1.10.5"
 
 "vm-browserify@^1.0.1":
   "integrity" "sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ=="

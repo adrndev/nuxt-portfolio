@@ -1,6 +1,6 @@
 <template>
   <header class="Header">
-    <div class="header-wrapper px-8 md:px-24">
+    <div class="header-wrapper px-8 md:px-24 font-inconsolata">
       <div class="logo-wrapper">
         logo
       </div>
@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .Header {
   color: $gray;
   position: sticky;
@@ -95,7 +95,6 @@ export default {
   z-index: 100;
   background: transparent;
   transition: color .3s;
-  font-family: 'Inconsolata', monospace;
   max-height: 120px;
   font-size: 1.5rem;
   box-sizing: border-box;

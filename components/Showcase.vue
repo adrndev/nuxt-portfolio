@@ -158,7 +158,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .showcase-wrapper {
   text-align: center;
   z-index: 2;
@@ -168,8 +168,8 @@ export default {
 
     .bubble {
       overflow: hidden;
-      border: solid 8px $bgColor;
-      box-shadow: 8px 8px $mainColor;
+      border: solid 5px $bgColor;
+      box-shadow: 5px 5px $mainColor;
       box-sizing: border-box;
       transition: box-shadow .3s;
       img {

@@ -2,6 +2,11 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'jost': 'Jost, cursive',
+      'inconsolata': 'Inconsolata',
+      'poppins': 'Poppins, sans-serif'
+    },
     extend: {
       lineHeight: {
         '20': '5rem'

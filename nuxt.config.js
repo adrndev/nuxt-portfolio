@@ -15,7 +15,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'animate.css/animate.min.css'
+    'animate.css/animate.min.css',
+    'viewerjs/dist/viewer.css'
   ],
 
   styleResources: {
@@ -25,6 +26,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~plugins/fontAwesome.js',
+    '~plugins/vueViewer.js',
     {
       src: '~plugins/particles.js',
       mode: 'client'
@@ -42,7 +44,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    'nuxt-animejs'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
