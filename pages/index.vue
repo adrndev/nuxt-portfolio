@@ -43,12 +43,23 @@
         </div>
       </section>
 
-      <div id="stack" class="showcase-sections pb-60 bg-white-main">
+      <div id="stack" class="showcase-sections pb-32 md:pb-60 bg-white-main">
         <Showcase />
       </div>
 
       <div class="polygon absolute w-full transform -translate-y-3/4 bg-dark-gray border-b-2 border-dark-gray" />
-      <section id="projects" class="section projects bg-dark-gray text-gray-main pt-32 pb-80">
+      <!-- <svg viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg">
+
+        <path id="MyPath" transform="translate(0 0)" fill="#091013" d="M 0 300 L 0 55 Q 150 25 300 55 L 300 300" />
+
+        <text style="font-size: 14px;">
+          <textPath href="#MyPath" fill="#091013" text-anchor="middle" startOffset="50%">
+            Projects
+          </textPath>
+        </text>
+
+      </svg> -->
+      <section id="projects" class="section projects bg-dark-gray text-gray-main pt-8 md:pt-20 pb-80 overflow-x-hidden">
         <ProjectsSlider />
       </section>
 
@@ -67,12 +78,6 @@ export default {
       observer: null
     }
   },
-  methods: {
-    scrollToFirstSection () {
-      const firstSection = document.querySelector('.section')
-      firstSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-  },
   mounted () {
     // const sections = document.querySelectorAll('.section')
 
@@ -88,6 +93,12 @@ export default {
     // sections.forEach((el) => {
     //   this.observer.observe(el)
     // })
+  },
+  methods: {
+    scrollToFirstSection () {
+      const firstSection = document.querySelector('.section')
+      firstSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
   }
 }
 </script>

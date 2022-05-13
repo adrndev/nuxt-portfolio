@@ -1,8 +1,9 @@
 <template>
-  <header class="Header">
+  <header class="Header" :class="{ scrolled }">
     <div class="header-wrapper px-8 md:px-24 font-inconsolata">
       <div class="logo-wrapper">
-        logo
+        <Logo :class="{ dark: scrolled }" />
+        <!-- <img src="@/assets/images/logo.svg" class="w-full h-auto" alt="Logo of Adrian Jaskot's portfolio"> -->
       </div>
       <nav class="menu hidden md:block">
         <ul class="menu-list">
@@ -21,6 +22,7 @@ export default {
   data () {
     return {
       scrollTop: 0,
+      scrolled: false,
       menuItems: [
         {
           title: 'About',
@@ -43,9 +45,9 @@ export default {
   },
   watch: {
     scrollTop (newValue, oldValue) {
-      const header = document.querySelector('.Header')
-      console.log(newValue)
-      header.classList.toggle('scrolled', newValue > 120)
+      // const header = document.querySelector('.Header')
+      this.scrolled = newValue > 120
+      // header.classList.toggle('scrolled', )
     }
   },
   mounted () {
@@ -77,8 +79,8 @@ export default {
       const hash = ev.target.hash
       const element = document.querySelector(hash)
 
-      if (element.offsetHeight > window.innerHeight - 100) {
-        window.scroll({ top: element.offsetTop - 100, behavior: 'smooth' })
+      if (element.offsetHeight > window.innerHeight - 150) {
+        window.scroll({ top: element.offsetTop - 150, behavior: 'smooth' })
       } else {
         window.scroll({ top: element.offsetTop - window.innerHeight / 2 + element.offsetHeight / 2, behavior: 'smooth' })
       }

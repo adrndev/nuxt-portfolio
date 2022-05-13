@@ -1,22 +1,24 @@
 <template>
   <div class="ProjectsSlider">
-    <div class="text-center text-6xl text-white-main mb-8 font-inconsolata uppercase">
+    <div class="text-center text-6xl text-white-main mb-8 font-inconsolata uppercase z-10 relative">
       {{ currentSlide.title }}
     </div>
     <div class="slider-wrapper">
-      <div v-viewer class="slides m-auto">
-        <div class="slide previous" @click.stop="handleChangeSlide(-1)">
-          <img :src="require('@/assets/images/' + previousSlide.filename)" :alt="previousSlide.title">
-        </div>
+      <viewer ref="viewer">
+        <div class="slides m-auto">
+          <div class="slide previous hidden md:block" @click.stop="handleChangeSlide(-1)">
+            <img :src="require('@/assets/images/' + previousSlide.filename)" :alt="previousSlide.title">
+          </div>
 
-        <div class="slide current">
-          <img :src="require('@/assets/images/' + currentSlide.filename)" :alt="currentSlide.title">
-        </div>
+          <div class="slide current">
+            <img :src="require('@/assets/images/' + currentSlide.filename)" :alt="currentSlide.title">
+          </div>
 
-        <div class="slide next" @click.stop="handleChangeSlide(1)">
-          <img :src="require('@/assets/images/' + nextSlide.filename)" :alt="nextSlide.title">
+          <div class="slide next hidden md:block" @click.stop="handleChangeSlide(1)">
+            <img :src="require('@/assets/images/' + nextSlide.filename)" :alt="nextSlide.title">
+          </div>
         </div>
-      </div>
+      </viewer>
     </div>
   </div>
 </template>
@@ -48,9 +50,22 @@ export default {
       return this.slides[this.currentId - 1] ?? this.slides[this.slides.length - 1]
     }
   },
+  watch: {
+    currentId () {
+      document.querySelector('.slide.current img').classList.remove('opacity-0')
+    }
+  },
+  mounted () {
+    this.intervalSet()
+  },
   methods: {
     update (val = 1) {
       const nextSlideId = this.currentId + val
+
+      if (this.$refs.viewer.$viewer.isShown) {
+        return true
+      }
+
       document.querySelector('.slide.current img').classList.add('opacity-0')
 
       this.timeout = setTimeout(() => {
@@ -72,14 +87,6 @@ export default {
       this.update(val)
       this.intervalSet()
     }
-  },
-  mounted () {
-    this.intervalSet()
-  },
-  watch: {
-    currentId () {
-      document.querySelector('.slide.current img').classList.remove('opacity-0')
-    }
   }
 }
 </script>
@@ -88,7 +95,7 @@ export default {
 .slider-wrapper {
   .slides {
     width: 100%;
-    height: 320px;
+    height: 480px;
     perspective: 1000px;
 
     .slide {
@@ -106,7 +113,7 @@ export default {
       }
 
       &.previous {
-        transform: translateX(-120%) scale(.6) rotateY(-36deg);
+        transform: translateX(-125%) scale(.6) rotateY(-36deg);
       }
 
       &.current {
@@ -119,7 +126,7 @@ export default {
       }
 
       &.next {
-        transform: translateX(20%) scale(.6) rotateY(36deg);
+        transform: translateX(25%) scale(.6) rotateY(36deg);
       }
     }
   }
