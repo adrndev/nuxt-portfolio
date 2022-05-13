@@ -7,15 +7,15 @@
       <viewer ref="viewer">
         <div class="slides m-auto">
           <div class="slide previous hidden md:block" @click.stop="handleChangeSlide(-1)">
-            <img :src="require('@/assets/images/' + previousSlide.filename)" :alt="previousSlide.title">
+            <img :src="require('@/assets/images/projects/' + previousSlide.filename)" :alt="previousSlide.title">
           </div>
 
           <div class="slide current">
-            <img :src="require('@/assets/images/' + currentSlide.filename)" :alt="currentSlide.title">
+            <img :src="require('@/assets/images/projects/' + currentSlide.filename)" :alt="currentSlide.title">
           </div>
 
           <div class="slide next hidden md:block" @click.stop="handleChangeSlide(1)">
-            <img :src="require('@/assets/images/' + nextSlide.filename)" :alt="nextSlide.title">
+            <img :src="require('@/assets/images/projects/' + nextSlide.filename)" :alt="nextSlide.title">
           </div>
         </div>
       </viewer>
@@ -29,9 +29,9 @@ export default {
   data () {
     return {
       slides: [
-        { id: 1, title: 'slide 1', filename: 'slide1.png' },
-        { id: 2, title: 'slide 2', filename: 'slide2.png' },
-        { id: 3, title: 'slide 3', filename: 'slide3.png' }
+        { id: 1, title: 'Hotel\'s home page', filename: 'hotel.png' },
+        { id: 2, title: 'Jewelry store', filename: 'jewelry.png' },
+        { id: 3, title: 'Forum app in node', filename: 'forum-app.png' }
       ],
       currentId: 1,
       timeout: null,
