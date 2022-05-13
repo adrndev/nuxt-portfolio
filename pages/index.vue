@@ -19,10 +19,11 @@
           </button>
         </div>
       </div>
-      <div class="polygon transform -translate-y-3/4 md:-translate-y-full bg-white-main border-b-2 border-white-main" />
-      <div class="scroll-down transform -translate-y-8 md:-translate-y-14 absolute -left-1/2">
+
+      <div class="polygon absolute transform w-full -translate-y-3/4 bg-white-main border-b-2 border-white-main" />
+      <div class="w-full scroll-down transform -translate-y-8 md:-translate-y-14 absolute">
         <font-awesome-icon
-          class="icon animate-bounce-slow"
+          class="icon animate-bounce-slow z-10"
           icon="fa-solid fa-chevron-down"
           @click="scrollToFirstSection"
         />
@@ -30,23 +31,24 @@
 
       <section id="about" class="section about pt-8 md:pt-0 flex justify-center gap-x-12 items-center pb-20 flex-col-reverse md:flex-row bg-white-main">
         <div class="about__content flex-1">
-          <h2 class="content__name text-6xl my-4 md:mt-0 md:mb-4 text-dark-gray text-center md:text-left">
+          <h2 class="content__name text-6xl my-4 md:mt-0 md:mb-8 text-dark-gray text-center md:text-left">
             Adrian Jaskot
           </h2>
-          <p class="content__desc text-xl max-w-3xl text-justify md:text-left">
+          <p class="content__desc text-xl max-w-2xl text-justify md:text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique suscipit vestibulum. Aenean eu justo id lorem tincidunt fermentum. Pellentesque pretium, urna non ullamcorper hendrerit, turpis tortor varius dui, sit amet euismod ante enim non mauris. Cras tempor ipsum eget nunc sollicitudin, non feugiat justo consectetur.
           </p>
         </div>
-        <div class="about__photo w-80 text-right">
+        <div class="about__photo w-80 text-center">
           <img class="rounded-full w-80 h-80 inline-block" src="https://picsum.photos/200/300" alt="Jaskot Adrian">
         </div>
       </section>
 
-      <div id="stack" class="showcase-sections pb-20 bg-white-main">
+      <div id="stack" class="showcase-sections pb-60 bg-white-main">
         <Showcase />
       </div>
 
-      <section id="projects" class="section projects bg-dark-gray text-gray-main py-40 overflow-x-hidden">
+      <div class="polygon absolute w-full transform -translate-y-3/4 bg-dark-gray border-b-2 border-dark-gray" />
+      <section id="projects" class="section projects bg-dark-gray text-gray-main pt-32 pb-80">
         <ProjectsSlider />
       </section>
 
@@ -117,10 +119,12 @@ export default {
 
   .polygon {
     height: 10vh;
-    width: 100%;
-    position: absolute;
     z-index: 2;
     clip-path: ellipse(60% 100% at 50% 100%);
+
+    @screen md {
+      transform: translateY(calc(-100% + 1px));
+    }
   }
 
   .scroll-down {

@@ -4,7 +4,7 @@
       <div class="section-title">
         Stack
       </div>
-      <div class="bubbles grid gap-4 grid-cols-3 md:grid-cols-6 xl:grid-cols-8">
+      <div class="bubbles grid gap-4 grid-cols-3 md:grid-cols-6 xl:grid-cols-10">
         <div v-for="lang in stack" :key="lang.title" class="bubble w-24 h-24 p-4 m-auto" :title="lang.title">
           <img :src="require('devicon/icons/' + lang.path)" :alt="lang.title + ' icon'">
         </div>
@@ -15,7 +15,7 @@
       <div class="section-title">
         Tools
       </div>
-      <div class="bubbles grid gap-4 grid-cols-3 lg:grid-cols-6 xl:grid-cols-8">
+      <div class="bubbles grid gap-4 grid-cols-3 lg:grid-cols-6 xl:grid-cols-10">
         <div v-for="tool in tools" :key="tool.title" class="bubble w-24 h-24 p-4 m-auto" :title="tool.title">
           <img :src="require('devicon/icons/' + tool.path)" :alt="tool.title + ' icon'">
         </div>
@@ -168,13 +168,13 @@ export default {
 
     .bubble {
       overflow: hidden;
-      border: solid 5px $bgColor;
-      box-shadow: 5px 5px $mainColor;
+      // border: solid 5px $bgColor;
+      // box-shadow: 5px 5px $mainColor;
       box-sizing: border-box;
       transition: box-shadow .3s;
       img {
         transition: filter .3s;
-        filter: grayscale(1);
+        // filter: grayscale(1);
       }
       &:hover {
         box-shadow: 8px 8px $mainColor, inset 0 -128px $mainColor;

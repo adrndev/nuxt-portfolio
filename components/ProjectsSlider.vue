@@ -1,21 +1,21 @@
 <template>
   <div class="ProjectsSlider">
+    <div class="text-center text-6xl text-white-main mb-8 font-inconsolata uppercase">
+      {{ currentSlide.title }}
+    </div>
     <div class="slider-wrapper">
       <div v-viewer class="slides m-auto">
         <div class="slide previous" @click.stop="handleChangeSlide(-1)">
           <img :src="require('@/assets/images/' + previousSlide.filename)" :alt="previousSlide.title">
         </div>
 
-        <div class="slide current shadow-2xl">
+        <div class="slide current">
           <img :src="require('@/assets/images/' + currentSlide.filename)" :alt="currentSlide.title">
         </div>
 
         <div class="slide next" @click.stop="handleChangeSlide(1)">
           <img :src="require('@/assets/images/' + nextSlide.filename)" :alt="nextSlide.title">
         </div>
-      </div>
-      <div class="current-slide-title text-center capitalize text-6xl text-white-main mt-4 font-jost">
-        {{ currentSlide.title }}
       </div>
     </div>
   </div>
@@ -86,16 +86,15 @@ export default {
 
 <style scoped lang="scss">
 .slider-wrapper {
-  overflow: hidden;
   .slides {
     width: 100%;
-    height: 306px;
+    height: 320px;
+    perspective: 1000px;
 
     .slide {
-      width: 576px;
-      height: 301px;
+      width: 768px;
+      height: inherit;
       position: absolute;
-      border: solid 5px $mainColor;
       left: 50%;
       cursor: pointer;
       max-width: 100%;
@@ -107,13 +106,12 @@ export default {
       }
 
       &.previous {
-        transform: translateX(-120%) scale(.8);
+        transform: translateX(-120%) scale(.6) rotateY(-36deg);
       }
 
       &.current {
         z-index: 3;
         transform: translateX(-50%);
-        background: $mainColor;
 
         img {
           transition: opacity .3s;
@@ -121,7 +119,7 @@ export default {
       }
 
       &.next {
-        transform: translateX(20%) scale(.8);
+        transform: translateX(20%) scale(.6) rotateY(36deg);
       }
     }
   }
