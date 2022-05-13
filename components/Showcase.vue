@@ -168,19 +168,13 @@ export default {
 
     .bubble {
       overflow: hidden;
-      // border: solid 5px $bgColor;
-      // box-shadow: 5px 5px $mainColor;
       box-sizing: border-box;
-      transition: box-shadow .3s;
       img {
-        transition: filter .3s;
-        // filter: grayscale(1);
+        transition: transform .3s;
       }
       &:hover {
-        box-shadow: 8px 8px $mainColor, inset 0 -128px $mainColor;
-        color: $bgColor;
         img {
-          filter: none;
+          transform: translateY(-1rem);
         }
       }
     }
