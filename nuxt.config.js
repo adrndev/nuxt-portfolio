@@ -13,6 +13,12 @@ export default {
     ]
   },
 
+  loadingIndicator: {
+    name: 'pulse',
+    color: '#ffe852',
+    background: '#071013'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'animate.css/animate.min.css',
@@ -86,6 +92,7 @@ export default {
     display: 'swap',
     prefetch: true,
     preconnect: true,
-    download: true
+    download: true,
+    preload: true
   }
 }

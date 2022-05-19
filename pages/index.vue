@@ -5,18 +5,29 @@
       <div class="hero h-screen bg-dark-gray">
         <MyParticles />
         <div class="web-title font-poppins text-gray-main absolute top-1/2 left-4 right-4 lg:w-auto transform -translate-y-1/2 text-center lg:text-left lg:left-32 2xl:left-72">
-          <h1 class="animate__fadeInUp leading-20 text-7xl font-jost">
-            Hi! I'm Adrian
-          </h1>
-          <div class="badge font-inconsolata py-1.5 px-3 text-lg my-4 inline-block text-dark-gray bg-yellow-main">
-            Fullstack developer
-          </div>
-          <p class="animate__fadeInUp mx-auto lg:mx-0 mb-4">
-            This is my portfolio. Check out my stack and projects. Contact me anytime.
-          </p>
-          <button class="contact-button text-lg font-inconsolata">
-            Contact me
-          </button>
+          <transition name="slideUp-1" appear-to-class="slide-to-appear" appear>
+            <h1 class="leading-20 text-7xl font-jost">
+              Hi! I'm Adrian
+            </h1>
+          </transition>
+
+          <transition name="slideUp-2" appear-to-class="slide-to-appear" appear>
+            <div class="badge font-inconsolata py-1.5 px-3 text-lg my-4 inline-block text-dark-gray bg-yellow-main">
+              Fullstack developer
+            </div>
+          </transition>
+
+          <transition name="slideUp-3" appear-to-class="slide-to-appear" appear>
+            <p class="mx-auto lg:mx-0 mb-4">
+              This is my portfolio. Check out my stack and projects. Contact me anytime.
+            </p>
+          </transition>
+
+          <transition name="slideUp-4" appear-to-class="slide-to-appear" appear>
+            <button class="contact-button text-lg font-inconsolata">
+              Contact me
+            </button>
+          </transition>
         </div>
       </div>
 
@@ -141,6 +152,43 @@ body {
       fill: red;
       cursor: pointer;
     }
+  }
+}
+
+.slideUp-1-enter-active {
+  animation: slideUp 1s;
+  animation-delay: .3s;
+}
+
+.slideUp-2-enter-active {
+  animation: slideUp 1s;
+  animation-delay: .6s;
+}
+
+.slideUp-3-enter-active {
+  animation: slideUp 1s;
+  animation-delay: .9s;
+}
+
+.slideUp-4-enter-active {
+  animation: slideUp 1s;
+  animation-delay: 1.2s;
+}
+
+.slide-to-appear
+{
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

@@ -31,7 +31,7 @@
 
       <div class="sidebar p-16 w-full xl:w-2/5 relative">
         <img src="@/assets/images/form-bg.webp" class="absolute w-full h-full object-cover left-0 top-0" alt="">
-        <div class="bg-white-main text-dark-gray bg-opacity-80 relative m-auto h-full w-full  md:w-3/4 xl:w-full p-6 flex flex-col justify-between">
+        <div class="rounded-3xl bg-white-main text-dark-gray bg-opacity-80 backdrop-filter backdrop-blur relative m-auto h-full w-full md:w-3/4 xl:w-full p-6 flex flex-col justify-between">
           <div>
             <h2 class="text-2xl border-b border-gray-main pb-4 mb-4">Adrian Jaskot</h2>
             <h3 class="flex justify-between border-b border-dark-gray mb-4">
