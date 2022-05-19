@@ -21,7 +21,7 @@
       </div>
 
       <div class="polygon absolute transform w-full -translate-y-3/4 bg-white-main border-b-2 border-white-main" />
-      <div class="w-full scroll-down transform -translate-y-8 md:-translate-y-14 absolute">
+      <div class="w-full scroll-down transform -translate-y-10 md:-translate-y-14 absolute">
         <font-awesome-icon
           class="icon animate-bounce-slow z-10"
           icon="fa-solid fa-chevron-down"
@@ -31,7 +31,7 @@
 
       <section id="about" class="section about pt-8 md:pt-0 flex justify-center gap-x-12 items-center pb-20 flex-col-reverse md:flex-row bg-white-main">
         <div class="about__content flex-1">
-          <h2 class="content__name text-6xl my-4 md:mt-0 md:mb-8 text-dark-gray text-center md:text-left">
+          <h2 class="content__name text-6xl my-8 md:mt-0 md:mb-8 text-dark-gray text-center md:text-left">
             Adrian Jaskot
           </h2>
           <p class="content__desc text-xl max-w-2xl text-justify md:text-left">
@@ -48,23 +48,12 @@
       </div>
 
       <div class="polygon absolute w-full transform -translate-y-3/4 bg-dark-gray border-b-2 border-dark-gray" />
-      <!-- <svg viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg">
-
-        <path id="MyPath" transform="translate(0 0)" fill="#091013" d="M 0 300 L 0 55 Q 150 25 300 55 L 300 300" />
-
-        <text style="font-size: 14px;">
-          <textPath href="#MyPath" fill="#091013" text-anchor="middle" startOffset="50%">
-            Projects
-          </textPath>
-        </text>
-
-      </svg> -->
       <section id="projects" class="section projects bg-dark-gray text-gray-main pt-8 md:pt-20 pb-80 overflow-x-hidden">
         <ProjectsSlider />
       </section>
 
-      <section id="contact" class="section contact">
-        contact me
+      <section id="contact" class="section contact mb-8">
+        <ContactMe />
       </section>
     </main>
   </div>
@@ -104,6 +93,10 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background: $whiteMain;
+}
+
 .Main {
   .hero {
     .web-title {

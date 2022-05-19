@@ -10,11 +10,15 @@ module.exports = {
     extend: {
       lineHeight: {
         20: '5rem'
+      },
+      borderWidth: {
+        '5': '5px'
       }
     },
     colors: {
       'yellow-main': '#ffe852',
       'dark-gray': '#071013',
+      'secondary': '#0D1E24',
       'gray-main': '#CAD3C8',
       'white-main': '#f9f9f9'
     },
