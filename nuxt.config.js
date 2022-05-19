@@ -13,6 +13,8 @@ export default {
     ]
   },
 
+  ssr: true,
+
   loadingIndicator: {
     name: 'pulse',
     color: '#ffe852',
